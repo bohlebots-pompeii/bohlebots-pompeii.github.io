@@ -35,38 +35,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== ACTIVE NAV LINK ON SCROLL =====
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 100)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// ===== HEADER BACKGROUND ON SCROLL =====
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(10, 10, 10, 0.98)';
-        header.style.boxShadow = '0 5px 20px rgba(255, 69, 0, 0.2)';
-    } else {
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
-        header.style.boxShadow = 'none';
+// ===== SCROLL HANDLER WITH THROTTLE =====
+let scrollTimeout;
+const handleScroll = () => {
+    if (scrollTimeout) {
+        return;
     }
-});
+    
+    scrollTimeout = setTimeout(() => {
+        // Active nav link on scroll
+        let current = '';
+        const sections = document.querySelectorAll('section');
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+
+        // Header background on scroll
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(10, 10, 10, 0.98)';
+            header.style.boxShadow = '0 5px 20px rgba(255, 69, 0, 0.2)';
+        } else {
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
+            header.style.boxShadow = 'none';
+        }
+
+        scrollTimeout = null;
+    }, 100);
+};
+
+window.addEventListener('scroll', handleScroll);
 
 // ===== SCROLL ANIMATIONS =====
 const observerOptions = {
@@ -111,18 +121,32 @@ if (contactForm) {
 // ===== DYNAMIC YEAR IN FOOTER =====
 const currentYear = new Date().getFullYear();
 const footerText = document.querySelector('.footer-bottom p');
-if (footerText && !footerText.textContent.includes(currentYear)) {
-    footerText.textContent = footerText.textContent.replace('2026', currentYear);
+if (footerText) {
+    footerText.textContent = `© ${currentYear} Bohlebots-Pompeii. All rights reserved. Rising from the ashes, reaching for the stars.`;
 }
 
 // ===== PARALLAX EFFECT FOR HERO =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroPhoenix = document.querySelector('.hero-phoenix');
-    if (heroPhoenix) {
-        heroPhoenix.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-});
+const heroPhoenix = document.querySelector('.hero-phoenix');
+if (heroPhoenix) {
+    heroPhoenix.style.willChange = 'transform';
+    
+    let parallaxTimeout;
+    window.addEventListener('scroll', () => {
+        if (parallaxTimeout) {
+            return;
+        }
+        
+        parallaxTimeout = setTimeout(() => {
+            requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                if (heroPhoenix && scrolled < 1000) {
+                    heroPhoenix.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+            parallaxTimeout = null;
+        }, 50);
+    });
+}
 
 // ===== LOADING ANIMATION =====
 window.addEventListener('load', () => {
