@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bohlebots-Pompeii | Rise from the Ashes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <div class="logo-container">
+                        <svg class="phoenix-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="phoenixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#ff8c00;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Phoenix Body -->
+                            <path d="M 50 80 Q 40 75 35 65 Q 30 55 30 45 L 30 35 Q 30 25 35 20 Q 40 15 50 15 Q 60 15 65 20 Q 70 25 70 35 L 70 45 Q 70 55 65 65 Q 60 75 50 80 Z" fill="url(#phoenixGradient)"/>
+                            <!-- Wings -->
+                            <path d="M 35 45 Q 20 50 10 45 Q 5 40 10 35 Q 20 30 30 35" fill="url(#phoenixGradient)" opacity="0.8"/>
+                            <path d="M 65 45 Q 80 50 90 45 Q 95 40 90 35 Q 80 30 70 35" fill="url(#phoenixGradient)" opacity="0.8"/>
+                            <!-- Flame Tail -->
+                            <path d="M 50 80 Q 45 85 42 92 Q 40 95 38 90 Q 36 85 40 82" fill="#ff4500" opacity="0.7"/>
+                            <path d="M 50 80 Q 50 88 50 95 Q 50 98 50 90" fill="#ff8c00" opacity="0.7"/>
+                            <path d="M 50 80 Q 55 85 58 92 Q 60 95 62 90 Q 64 85 60 82" fill="#ffd700" opacity="0.7"/>
+                            <!-- Head Crest -->
+                            <path d="M 50 15 Q 45 10 42 5 Q 40 2 42 8 Q 44 12 48 15" fill="#ff4500"/>
+                            <path d="M 50 15 Q 50 8 50 3 Q 50 0 50 8" fill="#ff8c00"/>
+                            <path d="M 50 15 Q 55 10 58 5 Q 60 2 58 8 Q 56 12 52 15" fill="#ffd700"/>
+                        </svg>
+                    </div>
+                    <span class="brand-text">
+                        <span class="brand-main">BOHLEBOTS</span>
+                        <span class="brand-sub">POMPEII</span>
+                    </span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#robot" class="nav-link">Our Robot</a></li>
+                    <li><a href="#blog" class="nav-link">Updates</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-animation">
+                <svg class="hero-phoenix" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heroPhoenixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ff8c00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Large Phoenix -->
+                    <g filter="url(#glow)">
+                        <path d="M 100 160 Q 80 150 70 130 Q 60 110 60 90 L 60 70 Q 60 50 70 40 Q 80 30 100 30 Q 120 30 130 40 Q 140 50 140 70 L 140 90 Q 140 110 130 130 Q 120 150 100 160 Z" fill="url(#heroPhoenixGradient)"/>
+                        <path d="M 70 90 Q 40 100 20 90 Q 10 80 20 70 Q 40 60 60 70" fill="url(#heroPhoenixGradient)" opacity="0.8"/>
+                        <path d="M 130 90 Q 160 100 180 90 Q 190 80 180 70 Q 160 60 140 70" fill="url(#heroPhoenixGradient)" opacity="0.8"/>
+                        <path d="M 100 160 Q 90 170 84 184 Q 80 190 76 180 Q 72 170 80 164" fill="#ff4500" opacity="0.7"/>
+                        <path d="M 100 160 Q 100 176 100 190 Q 100 196 100 180" fill="#ff8c00" opacity="0.7"/>
+                        <path d="M 100 160 Q 110 170 116 184 Q 120 190 124 180 Q 128 170 120 164" fill="#ffd700" opacity="0.7"/>
+                        <path d="M 100 30 Q 90 20 84 10 Q 80 4 84 16 Q 88 24 96 30" fill="#ff4500"/>
+                        <path d="M 100 30 Q 100 16 100 6 Q 100 0 100 16" fill="#ff8c00"/>
+                        <path d="M 100 30 Q 110 20 116 10 Q 120 4 116 16 Q 112 24 104 30" fill="#ffd700"/>
+                    </g>
+                </svg>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">RISE FROM THE ASHES</span>
+                <span class="title-line title-highlight">BOHLEBOTS POMPEII</span>
+            </h1>
+            <p class="hero-subtitle">Forging Excellence in Robotics Competition</p>
+            <div class="hero-buttons">
+                <a href="#blog" class="btn btn-primary">Latest Updates</a>
+                <a href="#robot" class="btn btn-secondary">See Our Robot</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">We are Bohlebots-Pompeii, a dedicated robotics team that rises to every challenge like the mythical phoenix.</p>
+                    <p>Our team combines innovation, engineering excellence, and unwavering determination to create competitive robots that push the boundaries of what's possible. Named after the legendary phoenix that rises from the ashes, we embody resilience, transformation, and continuous improvement.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Hours Invested</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Innovation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="400" fill="url(#phoenixGradient)"/>
+                            <text x="200" y="200" text-anchor="middle" fill="white" font-size="24" font-weight="bold">TEAM PHOTO</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Robot Section -->
+    <section id="robot" class="robot">
+        <div class="container">
+            <h2 class="section-title">Our Robot</h2>
+            <div class="robot-showcase">
+                <div class="robot-image">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="500" height="500" fill="url(#robotGradient)"/>
+                            <!-- Simple Robot Illustration -->
+                            <rect x="200" y="150" width="100" height="120" fill="#ff8c00" rx="5"/>
+                            <rect x="175" y="180" width="150" height="80" fill="#ff4500" rx="5"/>
+                            <circle cx="220" cy="200" r="8" fill="#ffd700"/>
+                            <circle cx="280" cy="200" r="8" fill="#ffd700"/>
+                            <rect x="180" y="270" width="40" height="80" fill="#ff8c00" rx="5"/>
+                            <rect x="280" y="270" width="40" height="80" fill="#ff8c00" rx="5"/>
+                            <text x="250" y="400" text-anchor="middle" fill="white" font-size="20" font-weight="bold">ROBOT RENDER</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="robot-info">
+                    <h3>Phoenix Rising</h3>
+                    <p class="robot-description">Our competition robot represents the pinnacle of our team's engineering prowess. Designed for agility, precision, and power, it embodies the spirit of the phoenix.</p>
+                    <div class="robot-specs">
+                        <h4>Key Features</h4>
+                        <ul class="specs-list">
+                            <li><span class="spec-icon">⚡</span> High-performance drivetrain</li>
+                            <li><span class="spec-icon">🎯</span> Precision control systems</li>
+                            <li><span class="spec-icon">🔧</span> Modular design for quick repairs</li>
+                            <li><span class="spec-icon">💪</span> Robust construction</li>
+                            <li><span class="spec-icon">🤖</span> Advanced autonomous capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Updates Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Updates</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="250" fill="#ff4500"/>
+                                <text x="200" y="125" text-anchor="middle" fill="white" font-size="18">BUILD UPDATE</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">February 2026</span>
+                            <span class="blog-category">Build</span>
+                        </div>
+                        <h3 class="blog-title">Robot Construction Complete</h3>
+                        <p class="blog-excerpt">After weeks of hard work, our robot chassis is complete! The team has successfully integrated the drive system and control electronics.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="250" fill="#ff8c00"/>
+                                <text x="200" y="125" text-anchor="middle" fill="white" font-size="18">PROGRAMMING</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">January 2026</span>
+                            <span class="blog-category">Software</span>
+                        </div>
+                        <h3 class="blog-title">Autonomous Mode Testing</h3>
+                        <p class="blog-excerpt">Our programming team has been working tirelessly on perfecting the autonomous routines. Initial tests show promising results!</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="250" fill="#ffd700"/>
+                                <text x="200" y="125" text-anchor="middle" fill="#333" font-size="18">COMPETITION</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">December 2025</span>
+                            <span class="blog-category">Events</span>
+                        </div>
+                        <h3 class="blog-title">Season Kickoff</h3>
+                        <p class="blog-excerpt">The new competition season has begun! We're excited to announce our participation in this year's challenge. Let the games begin!</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Meet the Team</h2>
+            <p class="section-description">The brilliant minds behind Bohlebots-Pompeii</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">👤</div>
+                    </div>
+                    <h4 class="member-name">Team Captain</h4>
+                    <p class="member-role">Leadership & Strategy</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">👤</div>
+                    </div>
+                    <h4 class="member-name">Lead Engineer</h4>
+                    <p class="member-role">Mechanical Design</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">👤</div>
+                    </div>
+                    <h4 class="member-name">Head Programmer</h4>
+                    <p class="member-role">Software Development</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">👤</div>
+                    </div>
+                    <h4 class="member-name">Electronics Lead</h4>
+                    <p class="member-role">Electrical Systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Interested in robotics? Want to join our team? Have questions about our robot?</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>bohlebots.pompeii@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>Follow us on social media</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Based in [Your Location]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-container">
+                        <svg class="phoenix-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 50 80 Q 40 75 35 65 Q 30 55 30 45 L 30 35 Q 30 25 35 20 Q 40 15 50 15 Q 60 15 65 20 Q 70 25 70 35 L 70 45 Q 70 55 65 65 Q 60 75 50 80 Z" fill="url(#phoenixGradient)"/>
+                            <path d="M 35 45 Q 20 50 10 45 Q 5 40 10 35 Q 20 30 30 35" fill="url(#phoenixGradient)" opacity="0.8"/>
+                            <path d="M 65 45 Q 80 50 90 45 Q 95 40 90 35 Q 80 30 70 35" fill="url(#phoenixGradient)" opacity="0.8"/>
+                            <path d="M 50 80 Q 45 85 42 92 Q 40 95 38 90 Q 36 85 40 82" fill="#ff4500" opacity="0.7"/>
+                            <path d="M 50 80 Q 50 88 50 95 Q 50 98 50 90" fill="#ff8c00" opacity="0.7"/>
+                            <path d="M 50 80 Q 55 85 58 92 Q 60 95 62 90 Q 64 85 60 82" fill="#ffd700" opacity="0.7"/>
+                            <path d="M 50 15 Q 45 10 42 5 Q 40 2 42 8 Q 44 12 48 15" fill="#ff4500"/>
+                            <path d="M 50 15 Q 50 8 50 3 Q 50 0 50 8" fill="#ff8c00"/>
+                            <path d="M 50 15 Q 55 10 58 5 Q 60 2 58 8 Q 56 12 52 15" fill="#ffd700"/>
+                        </svg>
+                    </div>
+                    <span class="brand-text">
+                        <span class="brand-main">BOHLEBOTS</span>
+                        <span class="brand-sub">POMPEII</span>
+                    </span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#robot">Robot</a>
+                    <a href="#blog">Updates</a>
+                    <a href="#team">Team</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bohlebots-Pompeii. All rights reserved. Rising from the ashes, reaching for the stars.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
