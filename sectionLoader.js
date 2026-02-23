@@ -1,8 +1,9 @@
 const SECTION_CONFIG = {
     '_lightweight': {
-        'Overview': [],
+        'Introduction': [],
         'Mechanical': [],
-        'Electronics': []
+        'Electronics': [],
+        'Software': []
     }
 };
 

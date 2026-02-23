@@ -493,7 +493,6 @@ section { padding: 80px 20px; }
     font-weight: 700;
 }
 
-/* Main content offset */
 #markdown-content.dynamic-section {
     margin-left: 260px;
     min-height: 80vh;
