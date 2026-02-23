@@ -6,8 +6,6 @@
     <title>Section | Bohlebots-Pompeii</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Removed scoped styles: rely on global styles.css for consistent navbar layout -->
 </head>
 <body>
     <header class="header">
@@ -42,33 +40,46 @@
                 <ul class="nav-menu" id="nav-menu">
                     <!-- Dynamisch generierte Sektionen werden hier eingefügt -->
                 </ul>
-                <div class="hamburger">
+                <div class="hamburger" id="header-hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
+                <a href="index.html" class="home-btn-mobile" id="home-btn-mobile" aria-label="Zur Startseite">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M9 21V9h6v12"/></svg>
+                </a>
             </div>
         </nav>
     </header>
     <main>
+        <button id="sidebar-toggle" class="sidebar-hamburger" aria-label="Open / close sidebar">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <aside class="markdown-sidebar" id="sidebar"></aside>
         <section id="markdown-content" class="dynamic-section centered-content"></section>
     </main>
     <footer class="footer">
-        <!-- ...Footer code... -->
+        <div class="container footer-center">
+            <p>&copy; 2024 BohleBots-Pompeii. All rights reserved.</p>
+            <p>Designed and developed by the BohleBots Team.</p>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="sectionLoader.js"></script>
     <script>
-    // Dynamisch die Foldernamen mit _ als Sektionen in die Navbar einfügen
     document.addEventListener('DOMContentLoaded', function() {
         fetchSections();
         centerMarkdownContent();
+        setupSidebarToggle();
+        toggleHeaderHamburgerOrHome();
+        window.addEventListener('resize', toggleHeaderHamburgerOrHome);
     });
+
     function fetchSections() {
-        fetch('sectionLoader.js') // Dummy fetch, da kein Backend, stattdessen direkt aus dem Verzeichnis
+        fetch('sectionLoader.js')
         .then(() => {
-            // Simuliere die Foldernamen mit _
             const folders = ['_lightweight'];
             const navMenu = document.getElementById('nav-menu');
             navMenu.innerHTML = '<li><a href="index.html" class="nav-link">Home</a></li>';
@@ -82,7 +93,6 @@
     }
 
     function centerMarkdownContent() {
-        // Erzwinge das Zentrieren der Inhalte
         const content = document.getElementById('markdown-content');
         if (content) {
             content.style.display = 'flex';
@@ -90,6 +100,38 @@
             content.style.alignItems = 'center';
             content.style.justifyContent = 'center';
             content.style.width = '100%';
+        }
+    }
+
+    function setupSidebarToggle() {
+        const sidebar = document.getElementById('sidebar');
+        const toggle = document.getElementById('sidebar-toggle');
+        if (!sidebar || !toggle) return;
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+            toggle.classList.toggle('active');
+        });
+        // only mobile
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900 && sidebar.classList.contains('sidebar-open')) {
+                if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+                    sidebar.classList.remove('sidebar-open');
+                    toggle.classList.remove('active');
+                }
+            }
+        });
+    }
+
+    function toggleHeaderHamburgerOrHome() {
+        const hamburger = document.getElementById('header-hamburger');
+        const homeBtn = document.getElementById('home-btn-mobile');
+        if (!hamburger || !homeBtn) return;
+        if (window.innerWidth <= 900) {
+            hamburger.style.display = 'none';
+            homeBtn.style.display = 'flex';
+        } else {
+            hamburger.style.display = '';
+            homeBtn.style.display = 'none';
         }
     }
     </script>
