@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section | Bohlebots-Pompeii</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Removed scoped styles: rely on global styles.css for consistent navbar layout -->
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <div class="logo-container">
+                        <svg class="phoenix-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- ...SVG code... -->
+                        </svg>
+                    </div>
+                    <span class="brand-text">
+                        <span class="brand-main">BohleBots Pompeii</span>
+                        <!-- brand-sub removed to keep single-line branding as requested -->
+                    </span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <!-- Dynamisch generierte Sektionen werden hier eingefügt -->
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <aside class="markdown-sidebar" id="sidebar"></aside>
+        <section id="markdown-content" class="dynamic-section centered-content"></section>
+    </main>
+    <footer class="footer">
+        <!-- ...Footer code... -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="sectionLoader.js"></script>
+    <script>
+    // Dynamisch die Foldernamen mit _ als Sektionen in die Navbar einfügen
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchSections();
+        centerMarkdownContent();
+    });
+    function fetchSections() {
+        fetch('sectionLoader.js') // Dummy fetch, da kein Backend, stattdessen direkt aus dem Verzeichnis
+        .then(() => {
+            // Simuliere die Foldernamen mit _
+            const folders = ['_lightweight'];
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.innerHTML = '<li><a href="index.html" class="nav-link">Home</a></li>';
+            folders.forEach(folder => {
+                const folderName = folder.replace(/^_/, '');
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="section.html?section=${encodeURIComponent(folder)}" class="nav-link">${folderName.charAt(0).toUpperCase() + folderName.slice(1)}</a>`;
+                navMenu.appendChild(li);
+            });
+        });
+    }
+
+    function centerMarkdownContent() {
+        // Erzwinge das Zentrieren der Inhalte
+        const content = document.getElementById('markdown-content');
+        if (content) {
+            content.style.display = 'flex';
+            content.style.flexDirection = 'column';
+            content.style.alignItems = 'center';
+            content.style.justifyContent = 'center';
+            content.style.width = '100%';
+        }
+    }
+    </script>
+</body>
+</html>

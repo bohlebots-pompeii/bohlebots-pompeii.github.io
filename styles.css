@@ -7,19 +7,20 @@
 
 :root {
     /* Phoenix Color Palette */
-    --phoenix-red: #ff4500;
+    --phoenix-red: #e25822; /* Updated to a more vivid Phoenix Red */
     --phoenix-orange: #ff8c00;
     --phoenix-gold: #ffd700;
-    --dark-bg: #0a0a0a;
-    --dark-secondary: #1a1a1a;
-    --dark-tertiary: #2a2a2a;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --accent-glow: rgba(255, 69, 0, 0.3);
-    
+    --accent-color: var(--phoenix-red);
+    --background: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #222222;
+    --accent-glow: rgba(226, 88, 34, 0.3);
     /* Spacing */
     --container-width: 1200px;
     --section-padding: 100px 20px;
+    --dark-bg: #0a0a0a;
+    --dark-secondary: #1a1a1a;
+    --dark-tertiary: #2a2a2a;
 }
 
 html {
@@ -28,16 +29,89 @@ html {
 
 body {
     font-family: 'Rajdhani', sans-serif;
-    background-color: var(--dark-bg);
+    background: var(--background);
     color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
+    padding-top: 72px; /* Header-Höhe spiegeln */
 }
 
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px;
+/* Update all backgrounds to white and text to black */
+.hero, .team, .footer, .stats, .stat-item, .blog-content, .team-member {
+    background: var(--background) !important;
+    color: var(--text-primary) !important;
+    box-shadow: none;
+}
+
+/* Remove gradients and dark backgrounds from buttons, links, icons */
+.btn-primary, .blog-category, .member-avatar, .nav-link:hover, .nav-link.active, .bar, .phoenix-logo {
+    background: var(--accent-color) !important;
+    color: var(--background) !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.btn-primary:hover, .blog-link:hover, .nav-link:hover, .nav-link.active {
+    background: var(--accent-color) !important;
+    color: var(--background) !important;
+}
+
+/* Remove gradients from text */
+.brand-main, .stat-number, .title-highlight {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background-clip: unset !important;
+    color: var(--text-primary) !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Links */
+.nav-link, .footer-links a, .blog-link {
+    color: var(--text-primary) !important;
+}
+
+.nav-link:hover, .footer-links a:hover, .blog-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Icons and SVGs */
+.phoenix-logo, .social-link svg {
+    filter: none !important;
+    color: var(--text-primary) !important;
+    fill: var(--text-primary) !important;
+}
+
+.social-link {
+    background: var(--background) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--accent-color);
+}
+
+.social-link:hover {
+    background: var(--accent-color) !important;
+    color: var(--background) !important;
+}
+
+/* Remove all box-shadows and border radii for a slick look */
+*, *:before, *:after {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* Accent color for highlights */
+.title-highlight, .btn-primary, .nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+/* Minimalistic section padding */
+section {
+    padding: 60px 0;
+    margin-top: 0; /* Panels/Sektionen sollen nicht mit dem Header überlappen */
+}
+
+/* Remove unnecessary decorations */
+hr, .divider {
+    display: none;
 }
 
 /* ===== HEADER & NAVIGATION ===== */
@@ -46,23 +120,34 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
+    height: 72px;
+
+    background: var(--background);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--accent-color);
+
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 69, 0, 0.2);
-}
-
-.navbar .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
 }
 
+/* Main layout container */
+.navbar .container {
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* KEY FIX */
+}
+
+/* ===== LEFT: BRAND ===== */
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .logo-container {
@@ -70,19 +155,41 @@ body {
     height: 50px;
 }
 
+/* ===== CENTER: NAV MENU ===== */
+.nav-menu {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    align-items: center;
+}
+
+/* ===== RIGHT: HAMBURGER ===== */
+.hamburger {
+    display: none; /* enabled in mobile */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
 .phoenix-logo {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 10px rgba(255, 69, 0, 0.5));
+    filter: none !important;
+    color: var(--text-primary) !important;
+    fill: var(--text-primary) !important;
     animation: phoenixPulse 3s ease-in-out infinite;
 }
 
 @keyframes phoenixPulse {
-    0%, 100% { 
+    0%, 100% {
         filter: drop-shadow(0 0 10px rgba(255, 69, 0, 0.5));
         transform: scale(1);
     }
-    50% { 
+    50% {
         filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.8));
         transform: scale(1.05);
     }
@@ -113,14 +220,9 @@ body {
     letter-spacing: 3px;
 }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
 
 .nav-link {
-    color: var(--text-secondary);
+    color: var(--text-primary) !important;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
@@ -143,19 +245,12 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--phoenix-orange);
+    color: var(--accent-color) !important;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
 }
 
 .bar {
@@ -174,6 +269,8 @@ body {
     position: relative;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
     overflow: hidden;
+    margin-top: 0;
+    z-index: 1 !important;
 }
 
 .hero::before {
@@ -202,6 +299,7 @@ body {
     bottom: 0;
     background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="%23ffffff" opacity="0.02"/></svg>');
     background-size: 2px 2px;
+    z-index: 1 !important;
 }
 
 .hero-content {
@@ -362,6 +460,7 @@ body {
 /* ===== SECTIONS ===== */
 section {
     padding: var(--section-padding);
+    margin-top: 0; /* Panels/Sektionen sollen nicht mit dem Header überlappen */
 }
 
 .section-title {
@@ -423,6 +522,7 @@ section {
     border-radius: 10px;
     border: 1px solid rgba(255, 69, 0, 0.2);
     transition: all 0.3s ease;
+    z-index: unset !important;
 }
 
 .stat-item:hover {
@@ -539,6 +639,7 @@ section {
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 69, 0, 0.1);
+    z-index: unset !important;
 }
 
 .blog-card:hover {
@@ -622,6 +723,7 @@ section {
     border-radius: 15px;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 69, 0, 0.1);
+    z-index: unset !important;
 }
 
 .team-member:hover {
@@ -810,30 +912,31 @@ section {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 968px) {
+    .hamburger {
+        display: flex;
+    }
+
     .nav-menu {
+        display: none;
         position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: rgba(10, 10, 10, 0.98);
+        top: 72px;
+        left: 0;
         width: 100%;
-        text-align: center;
-        transition: left 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        padding: 30px 0;
+        flex-direction: column;
+        background: #fff;
+        border-bottom: 1px solid var(--accent-color);
+        padding: 16px 0;
         gap: 0;
+        z-index: 999;
     }
 
     .nav-menu.active {
-        left: 0;
+        display: flex;
     }
 
     .nav-menu li {
-        padding: 15px 0;
-    }
-
-    .hamburger {
-        display: flex;
+        padding: 12px 24px;
+        text-align: right;
     }
 
     .hamburger.active .bar:nth-child(1) {
@@ -913,5 +1016,243 @@ section {
 
     .section-title {
         font-size: 28px;
+    }
+}
+
+/* Kontrast-Fix: Alle Textbereiche auf Schwarz, alle Hintergründe auf Weiß */
+.about, .robot, .team, .blog, .contact, .footer {
+    background: var(--background) !important;
+    color: var(--text-primary) !important;
+}
+
+.section-title, .section-description, .stat-label, .blog-title, .blog-excerpt, .member-name, .member-role, .contact-info h3, .contact-info p, .contact-item, .footer-bottom p {
+    color: var(--text-primary) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background-clip: unset !important;
+    text-shadow: none !important;
+}
+
+/* Akzentfarbe nur für Buttons, Links und Highlights */
+.btn-primary, .nav-link.active, .blog-category {
+    background: var(--accent-color) !important;
+    color: var(--background) !important;
+}
+
+.btn-primary:hover, .nav-link:hover, .blog-link:hover {
+    background: var(--accent-color) !important;
+    color: var(--background) !important;
+}
+
+/* Entferne alle Farbverläufe aus Text */
+.brand-main, .title-highlight, .stat-number {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background-clip: unset !important;
+    color: var(--text-primary) !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Layer-Fix: Header immer oben, andere Elemente darunter */
+.header {
+    z-index: 1000 !important;
+}
+
+.hero, section, .hero-overlay {
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+.blog-card, .team-member, .stat-item {
+    z-index: unset !important;
+}
+
+/* Markdown-Styling für vollständige Unterstützung */
+.dynamic-section {
+    max-width: 800px;
+    margin: 60px auto;
+    background: var(--background);
+    padding: 40px 30px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+}
+.section-title {
+    font-size: 2.2rem;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 24px;
+    color: var(--accent-color);
+}
+.section-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+.section-content h1,
+.section-content h2,
+.section-content h3,
+.section-content h4,
+.section-content h5,
+.section-content h6 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+}
+.section-content ul,
+.section-content ol {
+    margin: 1em 0 1em 2em;
+    padding-left: 1em;
+}
+.section-content li {
+    margin-bottom: 0.4em;
+}
+.section-content .task-list-item {
+    list-style: none;
+    margin-left: 0;
+}
+.section-content input[type="checkbox"] {
+    margin-right: 0.5em;
+    accent-color: var(--accent-color);
+}
+.section-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    background: #f9f9f9;
+    padding: 1em 1.5em;
+    margin: 1.5em 0;
+    color: #555;
+    font-style: italic;
+}
+.section-content pre {
+    background: #222;
+    color: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 1em;
+    margin: 1.5em 0;
+}
+.section-content code {
+    background: #f4f4f4;
+    color: #e25822;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.section-content pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+}
+.section-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+}
+.section-content th,
+.section-content td {
+    border: 1px solid #ddd;
+    padding: 0.6em 1em;
+    text-align: left;
+}
+.section-content th {
+    background: #f4f4f4;
+    color: var(--accent-color);
+}
+.section-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1em 0;
+}
+.section-content a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.section-content a:hover {
+    color: #b32c0a;
+}
+.section-content hr {
+    border: none;
+    border-top: 2px solid #eee;
+    margin: 2em 0;
+}
+.section-content sup,
+.section-content sub {
+    font-size: 0.85em;
+}
+.section-content .emoji {
+    font-size: 1.2em;
+}
+
+/* Sidebar für Markdown-Navigation */
+.markdown-sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 80px);
+    background: #fff;
+    border-right: 1px solid #eee;
+    padding: 30px 10px;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.03);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.markdown-sidebar h1 {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 18px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: left;
+}
+.markdown-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.markdown-sidebar li {
+    margin-bottom: 10px;
+}
+.markdown-sidebar a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: block;
+    transition: background 0.2s, color 0.2s;
+}
+.markdown-sidebar a.active,
+.markdown-sidebar a:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+/* Hauptbereich neben Sidebar */
+#markdown-content.dynamic-section {
+    margin-left: 240px;
+    min-height: 80vh;
+}
+@media (max-width: 900px) {
+    .markdown-sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        box-shadow: none;
+        padding: 10px 0;
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+    }
+    #markdown-content.dynamic-section {
+        margin-left: 0;
     }
 }

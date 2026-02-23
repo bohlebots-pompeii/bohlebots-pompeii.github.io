@@ -44,13 +44,8 @@
                         <span class="brand-sub">POMPEII</span>
                     </span>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#robot" class="nav-link">Our Robot</a></li>
-                    <li><a href="#blog" class="nav-link">Updates</a></li>
-                    <li><a href="#team" class="nav-link">Team</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                <ul class="nav-menu" id="nav-menu">
+                    <!-- Dynamisch generierte Sektionen werden hier eingefügt -->
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -100,10 +95,6 @@
                 <span class="title-line title-highlight">BOHLEBOTS POMPEII</span>
             </h1>
             <p class="hero-subtitle">Forging Excellence in Robotics Competition</p>
-            <div class="hero-buttons">
-                <a href="#blog" class="btn btn-primary">Latest Updates</a>
-                <a href="#robot" class="btn btn-secondary">See Our Robot</a>
-            </div>
         </div>
         <div class="scroll-indicator">
             <div class="mouse">
@@ -112,232 +103,6 @@
             <div class="arrow">
                 <span></span>
                 <span></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">We are Bohlebots-Pompeii, a dedicated robotics team that rises to every challenge like the mythical phoenix.</p>
-                    <p>Our team combines innovation, engineering excellence, and unwavering determination to create competitive robots that push the boundaries of what's possible. Named after the legendary phoenix that rises from the ashes, we embody resilience, transformation, and continuous improvement.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Team Members</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label">Hours Invested</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">∞</div>
-                            <div class="stat-label">Innovation</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="400" height="400" fill="url(#phoenixGradient)"/>
-                            <text x="200" y="200" text-anchor="middle" fill="white" font-size="24" font-weight="bold">TEAM PHOTO</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Robot Section -->
-    <section id="robot" class="robot">
-        <div class="container">
-            <h2 class="section-title">Our Robot</h2>
-            <div class="robot-showcase">
-                <div class="robot-image">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <rect width="500" height="500" fill="url(#robotGradient)"/>
-                            <!-- Simple Robot Illustration -->
-                            <rect x="200" y="150" width="100" height="120" fill="#ff8c00" rx="5"/>
-                            <rect x="175" y="180" width="150" height="80" fill="#ff4500" rx="5"/>
-                            <circle cx="220" cy="200" r="8" fill="#ffd700"/>
-                            <circle cx="280" cy="200" r="8" fill="#ffd700"/>
-                            <rect x="180" y="270" width="40" height="80" fill="#ff8c00" rx="5"/>
-                            <rect x="280" y="270" width="40" height="80" fill="#ff8c00" rx="5"/>
-                            <text x="250" y="400" text-anchor="middle" fill="white" font-size="20" font-weight="bold">ROBOT RENDER</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="robot-info">
-                    <h3>Phoenix Rising</h3>
-                    <p class="robot-description">Our competition robot represents the pinnacle of our team's engineering prowess. Designed for agility, precision, and power, it embodies the spirit of the phoenix.</p>
-                    <div class="robot-specs">
-                        <h4>Key Features</h4>
-                        <ul class="specs-list">
-                            <li><span class="spec-icon">⚡</span> High-performance drivetrain</li>
-                            <li><span class="spec-icon">🎯</span> Precision control systems</li>
-                            <li><span class="spec-icon">🔧</span> Modular design for quick repairs</li>
-                            <li><span class="spec-icon">💪</span> Robust construction</li>
-                            <li><span class="spec-icon">🤖</span> Advanced autonomous capabilities</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog/Updates Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2 class="section-title">Latest Updates</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="400" height="250" fill="#ff4500"/>
-                                <text x="200" y="125" text-anchor="middle" fill="white" font-size="18">BUILD UPDATE</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">February 2026</span>
-                            <span class="blog-category">Build</span>
-                        </div>
-                        <h3 class="blog-title">Robot Construction Complete</h3>
-                        <p class="blog-excerpt">After weeks of hard work, our robot chassis is complete! The team has successfully integrated the drive system and control electronics.</p>
-                        <a href="#" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="400" height="250" fill="#ff8c00"/>
-                                <text x="200" y="125" text-anchor="middle" fill="white" font-size="18">PROGRAMMING</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">January 2026</span>
-                            <span class="blog-category">Software</span>
-                        </div>
-                        <h3 class="blog-title">Autonomous Mode Testing</h3>
-                        <p class="blog-excerpt">Our programming team has been working tirelessly on perfecting the autonomous routines. Initial tests show promising results!</p>
-                        <a href="#" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="400" height="250" fill="#ffd700"/>
-                                <text x="200" y="125" text-anchor="middle" fill="#333" font-size="18">COMPETITION</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">December 2025</span>
-                            <span class="blog-category">Events</span>
-                        </div>
-                        <h3 class="blog-title">Season Kickoff</h3>
-                        <p class="blog-excerpt">The new competition season has begun! We're excited to announce our participation in this year's challenge. Let the games begin!</p>
-                        <a href="#" class="blog-link">Read More →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="team">
-        <div class="container">
-            <h2 class="section-title">Meet the Team</h2>
-            <p class="section-description">The brilliant minds behind Bohlebots-Pompeii</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <div class="avatar-placeholder">👤</div>
-                    </div>
-                    <h4 class="member-name">Team Captain</h4>
-                    <p class="member-role">Leadership & Strategy</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <div class="avatar-placeholder">👤</div>
-                    </div>
-                    <h4 class="member-name">Lead Engineer</h4>
-                    <p class="member-role">Mechanical Design</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <div class="avatar-placeholder">👤</div>
-                    </div>
-                    <h4 class="member-name">Head Programmer</h4>
-                    <p class="member-role">Software Development</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <div class="avatar-placeholder">👤</div>
-                    </div>
-                    <h4 class="member-name">Electronics Lead</h4>
-                    <p class="member-role">Electrical Systems</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Us</h3>
-                    <p>Interested in robotics? Want to join our team? Have questions about our robot?</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <span>bohlebots.pompeii@example.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <span>Follow us on social media</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <span>Based in [Your Location]</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
             </div>
         </div>
     </section>
@@ -398,5 +163,41 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="sectionLoader.js"></script>
+    <script>
+// Dynamisch die Foldernamen mit _ als Sektionen in die Navbar einfügen
+// UND: Korrigiere, dass der Header immer BOHLEBOTS POMPEII bleibt und die Blogposts zentriert sind
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetchSections();
+    centerMarkdownContent();
+});
+
+function fetchSections() {
+    // Simuliere die Foldernamen mit _
+    const folders = ['_lightweight'];
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.innerHTML = '<li><a href="index.html" class="nav-link">Home</a></li>';
+    folders.forEach(folder => {
+        const folderName = folder.replace(/^_/, '');
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="section.html?section=${encodeURIComponent(folder)}" class="nav-link">${folderName.charAt(0).toUpperCase() + folderName.slice(1)}</a>`;
+        navMenu.appendChild(li);
+    });
+}
+
+function centerMarkdownContent() {
+    // Erzwinge das Zentrieren der Inhalte
+    const content = document.getElementById('markdown-content');
+    if (content) {
+        content.style.display = 'flex';
+        content.style.flexDirection = 'column';
+        content.style.alignItems = 'center';
+        content.style.justifyContent = 'center';
+        content.style.width = '100%';
+    }
+}
+</script>
 </body>
 </html>
