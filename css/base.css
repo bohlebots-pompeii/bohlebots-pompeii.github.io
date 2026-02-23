@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400&display=swap');
+
+:root {
+    --font-main: 'Google Sans Flex', Arial, sans-serif;
+    --sidebar-w-lg: 340px;
+    --sidebar-w: 260px;
+    --max-w-lg: 1600px;
+    --max-w: 1200px;
+    --text2: #333333;
+    --text: #000000;
+    --bg: #ffffff;
+    --accent: var(--phoenix-red);
+    --phoenix-gold: #ffd700;
+    --phoenix-orange: #ff8c00;
+    --phoenix-red: #e25822;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }

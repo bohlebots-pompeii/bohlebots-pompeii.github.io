@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bohlebots-Pompeii | Rise from the Ashes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: 'Google Sans Flex', Arial, sans-serif; font-weight: 400;">
-    <!-- Header -->
-    <header class="header" style="font-family: 'Google Sans Flex', Arial, sans-serif; font-weight: 400;">
+<body>
+    <header class="header">
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
@@ -24,29 +23,24 @@
                                     <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <!-- Phoenix Body -->
                             <path d="M 50 80 Q 40 75 35 65 Q 30 55 30 45 L 30 35 Q 30 25 35 20 Q 40 15 50 15 Q 60 15 65 20 Q 70 25 70 35 L 70 45 Q 70 55 65 65 Q 60 75 50 80 Z" fill="url(#phoenixGradient)"/>
-                            <!-- Wings -->
                             <path d="M 35 45 Q 20 50 10 45 Q 5 40 10 35 Q 20 30 30 35" fill="url(#phoenixGradient)" opacity="0.8"/>
                             <path d="M 65 45 Q 80 50 90 45 Q 95 40 90 35 Q 80 30 70 35" fill="url(#phoenixGradient)" opacity="0.8"/>
-                            <!-- Flame Tail -->
                             <path d="M 50 80 Q 45 85 42 92 Q 40 95 38 90 Q 36 85 40 82" fill="#ff4500" opacity="0.7"/>
                             <path d="M 50 80 Q 50 88 50 95 Q 50 98 50 90" fill="#ff8c00" opacity="0.7"/>
                             <path d="M 50 80 Q 55 85 58 92 Q 60 95 62 90 Q 64 85 60 82" fill="#ffd700" opacity="0.7"/>
-                            <!-- Head Crest -->
                             <path d="M 50 15 Q 45 10 42 5 Q 40 2 42 8 Q 44 12 48 15" fill="#ff4500"/>
                             <path d="M 50 15 Q 50 8 50 3 Q 50 0 50 8" fill="#ff8c00"/>
                             <path d="M 50 15 Q 55 10 58 5 Q 60 2 58 8 Q 56 12 52 15" fill="#ffd700"/>
                         </svg>
                     </div>
-                    <span class="brand-text" style="font-family: 'Google Sans Flex', Arial, sans-serif; font-weight: 400;">
+                    <span class="brand-text">
                         <span class="brand-main">BOHLEBOTS</span>
                         <span class="brand-sub">POMPEII</span>
                     </span>
                 </div>
-                <ul class="nav-menu" id="nav-menu">
-                </ul>
-                <div class="hamburger">
+                <ul class="nav-menu" id="nav-menu"></ul>
+                <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -55,7 +49,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -75,7 +68,6 @@
                             </feMerge>
                         </filter>
                     </defs>
-                    <!-- Large Phoenix -->
                     <g filter="url(#glow)">
                         <path d="M 100 160 Q 80 150 70 130 Q 60 110 60 90 L 60 70 Q 60 50 70 40 Q 80 30 100 30 Q 120 30 130 40 Q 140 50 140 70 L 140 90 Q 140 110 130 130 Q 120 150 100 160 Z" fill="url(#heroPhoenixGradient)"/>
                         <path d="M 70 90 Q 40 100 20 90 Q 10 80 20 70 Q 40 60 60 70" fill="url(#heroPhoenixGradient)" opacity="0.8"/>
@@ -94,27 +86,24 @@
             </h1>
             <p class="hero-subtitle">Rising from the ashes, reaching for the stars</p>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="arrow">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer" style="font-family: 'Google Sans Flex', Arial, sans-serif; font-weight: 400;">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo-container" style="width:56px;height:56px;">
-                        <svg class="phoenix-logo" viewBox="0 0 100 100" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 50 80 Q 40 75 35 65 Q 30 55 30 45 L 30 35 Q 30 25 35 20 Q 40 15 50 15 Q 60 15 65 20 Q 70 25 70 35 L 70 45 Q 70 55 65 65 Q 60 75 50 80 Z" fill="url(#phoenixGradient)"/>
-                            <path d="M 35 45 Q 20 50 10 45 Q 5 40 10 35 Q 20 30 30 35" fill="url(#phoenixGradient)" opacity="0.8"/>
-                            <path d="M 65 45 Q 80 50 90 45 Q 95 40 90 35 Q 80 30 70 35" fill="url(#phoenixGradient)" opacity="0.8"/>
+                    <div class="logo-container">
+                        <svg class="phoenix-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="footerPhoenixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#ff8c00;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 50 80 Q 40 75 35 65 Q 30 55 30 45 L 30 35 Q 30 25 35 20 Q 40 15 50 15 Q 60 15 65 20 Q 70 25 70 35 L 70 45 Q 70 55 65 65 Q 60 75 50 80 Z" fill="url(#footerPhoenixGradient)"/>
+                            <path d="M 35 45 Q 20 50 10 45 Q 5 40 10 35 Q 20 30 30 35" fill="url(#footerPhoenixGradient)" opacity="0.8"/>
+                            <path d="M 65 45 Q 80 50 90 45 Q 95 40 90 35 Q 80 30 70 35" fill="url(#footerPhoenixGradient)" opacity="0.8"/>
                             <path d="M 50 80 Q 45 85 42 92 Q 40 95 38 90 Q 36 85 40 82" fill="#ff4500" opacity="0.7"/>
                             <path d="M 50 80 Q 50 88 50 95 Q 50 98 50 90" fill="#ff8c00" opacity="0.7"/>
                             <path d="M 50 80 Q 55 85 58 92 Q 60 95 62 90 Q 64 85 60 82" fill="#ffd700" opacity="0.7"/>
@@ -123,7 +112,7 @@
                             <path d="M 50 15 Q 55 10 58 5 Q 60 2 58 8 Q 56 12 52 15" fill="#ffd700"/>
                         </svg>
                     </div>
-                    <span class="brand-text" style="gap:2px;">
+                    <span class="brand-text">
                         <span class="brand-main">BOHLEBOTS</span>
                         <span class="brand-sub">POMPEII</span>
                     </span>
@@ -131,14 +120,14 @@
                 <div class="footer-links">
                     <a href="#home">Home</a>
                 </div>
-                <div class="footer-social" style="gap:28px;">
+                <div class="footer-social">
                     <a href="https://github.com/bohlebots-pompeii" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                     </a>
                     <a href="#" class="social-link" aria-label="Instagram">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
                     </a>
@@ -153,35 +142,7 @@
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="sectionLoader.js"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    fetchSections();
-    centerMarkdownContent();
-});
-
-function fetchSections() {
-    const folders = ['_lightweight'];
-    const navMenu = document.getElementById('nav-menu');
-    navMenu.innerHTML = '<li><a href="index.html" class="nav-link">Home</a></li>';
-    folders.forEach(folder => {
-        const folderName = folder.replace(/^_/, '');
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="section.html?section=${encodeURIComponent(folder)}" class="nav-link">${folderName.charAt(0).toUpperCase() + folderName.slice(1)}</a>`;
-        navMenu.appendChild(li);
-    });
-}
-
-function centerMarkdownContent() {
-    // Erzwinge das Zentrieren der Inhalte
-    const content = document.getElementById('markdown-content');
-    if (content) {
-        content.style.display = 'flex';
-        content.style.flexDirection = 'column';
-        content.style.alignItems = 'center';
-        content.style.justifyContent = 'center';
-        content.style.width = '100%';
-    }
-}
-</script>
+    <script src="main.js"></script>
 </body>
 </html>
+

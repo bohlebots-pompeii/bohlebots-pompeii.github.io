@@ -1,0 +1,198 @@
+/* Hero, about, team, blog, contact, markdown content, etc. */
+
+/* ===== HERO ===== */
+.hero {
+    min-height: calc(100vh - 64px);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg);
+    position: relative; overflow: hidden;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(226,88,34,0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+.hero-content   { text-align: center; max-width: 800px; padding: 0 20px; position: relative; z-index: 2; }
+.hero-animation { margin-bottom: 32px; }
+.hero-phoenix {
+    width: 160px; height: 160px;
+    animation: phoenixFloat 3.5s ease-in-out infinite;
+    filter: drop-shadow(0 6px 20px rgba(226,88,34,0.4));
+}
+@keyframes phoenixFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-14px); }
+}
+.hero-title {
+    font-family: var(--font-main), sans-serif;
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 16px; line-height: 1.2;
+}
+.title-line      { display: block; }
+.title-highlight { color: var(--accent); }
+.hero-subtitle   { font-size: 20px; color: var(--text2); margin-bottom: 32px; font-weight: 400; }
+.hero-buttons    { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== ABOUT ===== */
+.about, .robot, .team, .blog, .contact, .footer { background: var(--bg); color: var(--text); }
+
+.about-content, .robot-showcase, .contact-content {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: center; margin-top: 40px;
+    max-width: var(--max-w); margin-left: auto; margin-right: auto;
+}
+.about-text .lead { font-size: 22px; color: var(--accent); margin-bottom: 16px; font-weight: 500; }
+.about-text p     { color: var(--text2); margin-bottom: 12px; font-size: 17px; }
+
+.stats      { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.stat-item  { text-align: center; padding: 16px; border: 1px solid #eee; transition: .2s; }
+.stat-item:hover { border-color: var(--accent); transform: translateY(-4px); }
+.stat-number {
+    font-family: var(--font-main), sans-serif;
+    font-size: 40px; font-weight: 900;
+    color: var(--accent);
+}
+.stat-label { color: var(--text2); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+
+.about-image, .robot-image { overflow: hidden; }
+.image-placeholder     { width: 100%; height: auto; background: #f5f5f5; display: flex; align-items: center; justify-content: center; }
+.image-placeholder svg { width: 100%; height: auto; }
+
+/* ===== ROBOT ===== */
+.robot-info h3     { font-family: var(--font-main), sans-serif; font-size: 28px; margin-bottom: 16px; color: var(--accent); }
+.robot-description { color: var(--text2); font-size: 17px; margin-bottom: 24px; line-height: 1.7; }
+.robot-specs h4    { font-family: var(--font-main), sans-serif; font-size: 20px; margin-bottom: 16px; color: var(--text); }
+.specs-list        { list-style: none; }
+.specs-list li     { padding: 10px 0; color: var(--text2); font-size: 17px; display: flex; align-items: center; gap: 12px; }
+
+/* ===== BLOG ===== */
+.blog-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px; margin-top: 40px;
+    max-width: var(--max-w); margin-left: auto; margin-right: auto;
+}
+.blog-card       { border: 1px solid #eee; overflow: hidden; transition: .2s; }
+.blog-card:hover { border-color: var(--accent); transform: translateY(-6px); }
+.blog-image      { width: 100%; height: 220px; overflow: hidden; }
+.blog-content    { padding: 24px; }
+.blog-meta       { display: flex; justify-content: space-between; margin-bottom: 12px; }
+.blog-date       { color: var(--text2); font-size: 13px; }
+.blog-category   { background: var(--accent); color: #fff; padding: 3px 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+.blog-title      { font-family: var(--font-main), sans-serif; font-size: 20px; margin-bottom: 12px; color: var(--text); }
+.blog-excerpt    { color: var(--text2); margin-bottom: 16px; line-height: 1.5; }
+.blog-link       { color: var(--accent); text-decoration: none; font-weight: 600; }
+.blog-link:hover { text-decoration: underline; }
+
+/* ===== TEAM ===== */
+.team-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px; margin-top: 40px;
+    max-width: var(--max-w); margin-left: auto; margin-right: auto;
+}
+.team-member       { text-align: center; padding: 24px; border: 1px solid #eee; transition: .2s; }
+.team-member:hover { border-color: var(--accent); transform: translateY(-6px); }
+.member-avatar {
+    width: 120px; height: 120px; margin: 0 auto 16px;
+    border-radius: 50%; background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+}
+.avatar-placeholder { font-size: 60px; }
+.member-name { font-family: var(--font-main), sans-serif; font-size: 18px; margin-bottom: 6px; color: var(--text); }
+.member-role { color: var(--text2); font-size: 15px; }
+
+/* ===== CONTACT ===== */
+.contact-info h3  { font-family: var(--font-main), sans-serif; font-size: 28px; margin-bottom: 16px; color: var(--accent); }
+.contact-info p   { color: var(--text2); font-size: 17px; margin-bottom: 24px; }
+.contact-details  { display: flex; flex-direction: column; gap: 16px; }
+.contact-item     { display: flex; align-items: center; gap: 12px; color: var(--text2); font-size: 15px; }
+.contact-form     { background: #fafafa; padding: 32px; border: 1px solid #eee; }
+
+/* ===== MARKDOWN CONTENT ===== */
+.centered-content, main.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Make the dynamic section a fixed-width readable column that centers in the viewport.
+   Use width = min(800px, 90vw). Centering formula: left edge = 50vw - half(width).
+   Use clamp to ensure the left edge never goes under the sidebar width (so it won't overlap).
+*/
+.dynamic-section {
+    width: min(800px, 90vw);
+    background: var(--bg);
+    padding: 32px 24px;
+    border: 1px solid #eee;
+    margin: 40px 0; /* vertical spacing only; horizontal positioning via margin-left below */
+    box-sizing: border-box;
+    position: relative;
+    left: 0; /* reset */
+}
+
+/* Center horizontally relative to viewport, but never allow left edge to be less than the sidebar width. */
+@media (min-width: 900px) {
+    .dynamic-section {
+        margin-left: clamp(
+            var(--sidebar-w),
+            calc(50vw - (min(800px, 90vw) / 2)),
+            calc(100vw - min(800px, 90vw) - 24px)
+        );
+    }
+}
+
+/* On small screens, just center normally using auto margins */
+@media (max-width: 899px) {
+    .dynamic-section {
+        width: 100%;
+        max-width: 98vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.section-content {
+    font-size: clamp(1.05rem, 1.3vw, 1.5rem);
+    line-height: 1.7;
+    color: var(--text);
+    font-family: var(--font-main), sans-serif !important;
+    max-width: 800px; /* readable column width inside the dynamic section */
+    width: 100%;
+    margin: 0 auto; /* center content within dynamic-section */
+    display: block;
+    box-sizing: border-box;
+}
+
+/* reset any previous transforms/positioning on section-content */
+.section-content { transform: none; position: static; left: auto; }
+
+/* headings and other styles remain unchanged */
+.section-content h1, .section-content h2, .section-content h3,
+.section-content h4, .section-content h5, .section-content h6 {
+    margin-top: 1.2em; margin-bottom: 0;
+    font-family: var(--font-main), sans-serif !important;
+    color: var(--accent);
+}
+.section-content ul, .section-content ol { margin: 1em 0 1em 2em; padding-left: 1em; }
+.section-content li { margin-bottom: .4em; }
+.section-content blockquote {
+    border-left: 3px solid var(--accent); background: #fafafa;
+    padding: .8em 1.2em; margin: 1.2em 0; color: #555; font-style: italic;
+}
+.section-content pre      { background: #1a1a1a; color: #fff; padding: 1em; overflow-x: auto; margin: 1.2em 0; }
+.section-content code     { background: #f4f4f4; color: var(--accent); padding: .15em .35em; font-size: .95em; }
+.section-content pre code { background: none; color: inherit; padding: 0; }
+.section-content table    { border-collapse: collapse; width: 100%; margin: 1.2em 0; }
+.section-content th,
+.section-content td        { border: 1px solid #ddd; padding: .5em .8em; text-align: left; }
+.section-content th        { background: #f4f4f4; color: var(--accent); }
+.section-content img       { max-width: 100%; margin: 1em 0; }
+.section-content a         { color: var(--accent); text-decoration: underline; }
+.section-content a:hover   { color: #b32c0a; }
+.section-content hr        { border: none; border-top: 2px solid #eee; margin: 1.5em 0; display: block; }
+

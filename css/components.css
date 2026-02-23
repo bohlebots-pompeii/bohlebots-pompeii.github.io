@@ -1,0 +1,24 @@
+/* Buttons, cards, forms, etc. */
+.btn {
+    padding: 12px 32px; font-size: 15px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px;
+    text-decoration: none; cursor: pointer;
+    border: none; font-family: 'Rajdhani', sans-serif;
+    transition: .2s; display: inline-block;
+}
+.btn-primary       { background: var(--accent); color: #fff; }
+.btn-primary:hover { opacity: .85; transform: translateY(-2px); }
+.btn-secondary       { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+.btn-secondary:hover { background: var(--accent); color: #fff; }
+
+.form-group      { margin-bottom: 16px; }
+.form-group input,
+.form-group textarea {
+    width: 100%; padding: 12px; background: #fff;
+    border: 1px solid #ddd; color: var(--text);
+    font-family: var(--font-main), sans-serif; font-size: 15px; transition: .2s;
+}
+.form-group input:focus,
+.form-group textarea:focus { outline: none; border-color: var(--accent); }
+.form-group textarea { resize: vertical; }
+
