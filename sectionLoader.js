@@ -1,8 +1,8 @@
 const SECTION_CONFIG = {
     '_lightweight': {
-        'Overview': ['Introduction.md', 'Header.md'],
-        'Mechanical': ['Introduction.md'],
-        'Electronics': ['Header.md']
+        'Overview': [],
+        'Mechanical': [],
+        'Electronics': []
     }
 };
 
@@ -11,11 +11,11 @@ function getParam(key, fallback) {
     return new URLSearchParams(window.location.search).get(key) || fallback;
 }
 function getCurrentFolder() {
-    const md = getParam('md', '_lightweight/Introduction.md');
+    const md = getParam('md', '_lightweight/fallback.md');
     return md.split('/')[0];
 }
 function getCurrentFile() {
-    const md = getParam('md', '_lightweight/Introduction.md');
+    const md = getParam('md', '_lightweight/fallback.md');
     return md.split('/')[1];
 }
 
@@ -90,21 +90,23 @@ function makeArticleItem(folder, file, currentFile) {
 }
 
 // ── Markdown renderer ────────────────────────────────────────
-function renderMarkdown(folder, file) {
+function renderMarkdown(folder, file, triedFallback = false) {
     fetch(`${folder}/${file}`)
         .then(res => {
             if (!res.ok) throw new Error('File not found');
             return res.text();
         })
         .then(md => {
-            const title = file.replace('.md', '').replace(/-/g, ' ');
             document.getElementById('markdown-content').innerHTML =
-                `<h2 class="section-title">${title}</h2>` +
                 `<div class="section-content">${marked.parse(md)}</div>`;
         })
         .catch(() => {
-            document.getElementById('markdown-content').innerHTML =
-                `<p style="color:#999;padding:40px">Could not load <strong>${file}</strong>.</p>`;
+            if (!triedFallback && file !== 'fallback.md') {
+                renderMarkdown(folder, 'fallback.md', true);
+            } else {
+                document.getElementById('markdown-content').innerHTML =
+                    `<p style="color:#999;padding:40px">Could not load <strong>${file}</strong>.</p>`;
+            }
         });
 }
 

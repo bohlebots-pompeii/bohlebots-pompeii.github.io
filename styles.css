@@ -417,7 +417,7 @@ section { padding: 80px 20px; }
     color: var(--text2);
     text-decoration: none;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 25px;
+    font-size: 17px;
     font-weight: 600;
     transition: background .15s, color .15s;
     border-left: 3px solid transparent;
@@ -475,7 +475,7 @@ section { padding: 80px 20px; }
     color: var(--text2);
     text-decoration: none;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     transition: background .15s, color .15s;
     border-left: 3px solid transparent;
