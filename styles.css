@@ -348,7 +348,7 @@ section { padding: 80px 20px; }
 
 /* ===== MARKDOWN CONTENT ===== */
 .dynamic-section {
-    max-width: 800px; margin: 48px auto;
+    max-width: 800px;
     background: var(--bg); padding: 32px 24px;
     border: 1px solid #eee;
 }
@@ -501,6 +501,7 @@ section { padding: 80px 20px; }
     padding: 40px 32px;
     border: none;
     margin-right: auto;
+    display: block;
 }
 
 @media (max-width: 900px) {
@@ -518,5 +519,21 @@ section { padding: 80px 20px; }
     .sidebar-group ul { display: flex; }
     .sidebar-group.open ul { display: flex; }
     #markdown-content.dynamic-section { margin-left: 0; }
+}
+
+@media (min-width: 1200px) {
+    #markdown-content.dynamic-section {
+        margin-left: calc(260px + ((100vw - 260px - 860px) / 2));
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    #markdown-content.dynamic-section {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 98vw;
+        padding: 24px 4vw;
+    }
 }
 
