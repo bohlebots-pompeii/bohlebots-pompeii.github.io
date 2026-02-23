@@ -62,15 +62,8 @@ const handleScroll = () => {
             }
         });
 
-        // Header background on scroll
-        const header = document.querySelector('.header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(10, 10, 10, 0.98)';
-            header.style.boxShadow = '0 5px 20px rgba(255, 69, 0, 0.2)';
-        } else {
-            header.style.background = 'rgba(10, 10, 10, 0.95)';
-            header.style.boxShadow = 'none';
-        }
+        // Header scroll state — keep white background
+        // (removed dark background override)
 
         scrollTimeout = null;
     }, 100);
@@ -125,36 +118,12 @@ if (footerText) {
     footerText.textContent = `© ${currentYear} Bohlebots-Pompeii. All rights reserved. Rising from the ashes, reaching for the stars.`;
 }
 
-// ===== PARALLAX EFFECT FOR HERO =====
-const heroPhoenix = document.querySelector('.hero-phoenix');
-if (heroPhoenix) {
-    heroPhoenix.style.willChange = 'transform';
-    
-    let parallaxTimeout;
-    window.addEventListener('scroll', () => {
-        if (parallaxTimeout) {
-            return;
-        }
-        
-        parallaxTimeout = setTimeout(() => {
-            requestAnimationFrame(() => {
-                const scrolled = window.pageYOffset;
-                if (heroPhoenix && scrolled < 1000) {
-                    heroPhoenix.style.transform = `translateY(${scrolled * 0.3}px)`;
-                }
-            });
-            parallaxTimeout = null;
-        }, 50);
-    });
-}
+// Parallax removed — CSS animation handles the phoenix movement
 
 // ===== LOADING ANIMATION =====
 window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
+    document.body.style.transition = 'opacity 0.4s ease';
+    document.body.style.opacity = '1';
 });
 
 console.log('🔥 Bohlebots-Pompeii Website Loaded - Rising from the Ashes! 🔥');
