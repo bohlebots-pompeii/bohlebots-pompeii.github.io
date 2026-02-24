@@ -4,7 +4,7 @@
 .hero {
     min-height: calc(100vh - 64px);
     display: flex; align-items: center; justify-content: center;
-    background: url('../_images/banner.jpeg') no-repeat center -60%;
+    background: url('../_images/banner.jpeg') no-repeat center center;
     background-size: cover;
     position: relative; overflow: hidden;
 }

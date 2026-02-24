@@ -14,13 +14,13 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <div class="logo-container" style="display:flex;align-items:flex-start;height:56px;">
-                        <img src="_images/logonobg.png" alt="BohleBots Logo" class="phoenix-logo" style="width:56px;height:56px;object-fit:contain;margin-top: 0px; margin-left: -5px" />
+                    <div class="logo-container">
+                        <img src="_images/logonobg.png" alt="BohleBots Logo" class="phoenix-logo"/>
                     </div>
                     <span class="brand-text">
-                            <span class="brand-main">BOHLEBOTS</span>
-                            <span class="brand-sub">POMPEII</span>
-                        </span>
+                        <span class="brand-main">BOHLEBOTS</span>
+                        <span class="brand-sub">POMPEII</span>
+                    </span>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -37,6 +37,9 @@
                             <img src="_images/gymhaan_logo.png" alt="Gymhaan Logo" class="gymhaan-logo">
                         </a>
                     </div>
+                    <button class="home-btn-mobile" aria-label="Home" onclick="window.location.href='index.html'" style="margin-left:10px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 12L12 3l9 9"/><path d="M9 21V9h6v12"/></svg>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -61,6 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="sectionLoader.js"></script>
     <script src="main.js"></script>
+    <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const brand = document.querySelector('.nav-brand');
