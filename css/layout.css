@@ -37,10 +37,15 @@
 .logo-container { width: 40px; height: 40px; flex-shrink: 0; }
 .phoenix-logo   { width: 100%; height: 100%; }
 
-.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    min-width: 120px;
+}
 .brand-main,
 .brand-sub {
-    font-family: var(--font-main), sans-serif;
+    font-family: var(--font-main), Arial, sans-serif;
     font-weight: 400;
     color: var(--text);
     letter-spacing: 1.5px;
@@ -260,10 +265,10 @@ section { padding: 80px 20px; }
     margin-bottom: 32px; flex-wrap: wrap; gap: 24px;
 }
 .footer-brand {
-    display: flex; align-items: center; gap: 12px;
+    display: flex; align-items: center;
     font-family: var(--font-main), sans-serif;
 }
-.footer-brand .logo-container { width: 56px !important; height: 56px !important; margin-right: 16px; }
+.footer-brand .logo-container { width: 56px !important; height: 56px !important; }
 .footer-social { display: flex; gap: 28px !important; align-items: center; }
 .footer-social .social-link {
     width: 44px; height: 44px;
@@ -278,7 +283,7 @@ section { padding: 80px 20px; }
 .footer-social .social-link:hover { background: var(--accent); border-color: var(--phoenix-gold); box-shadow: 0 4px 16px rgba(226,88,34,0.18); }
 .footer-social .social-link svg   { width: 32px; height: 32px; color: var(--accent); transition: color 0.2s; }
 .footer-social .social-link:hover svg { color: #fff; }
-.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center}
 .footer-links a { color: var(--text2); text-decoration: none; transition: .2s; font-family: var(--font-main), sans-serif; }
 .footer-links a:hover { color: var(--accent); }
 .footer-bottom   { text-align: center; padding-top: 24px; border-top: 1px solid #eee; }

@@ -1,25 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    buildNavMenu();
-
     if (window.location.pathname.endsWith('section.html')) {
         setupSidebarToggle();
-        toggleHeaderHamburgerOrHome();
-        window.addEventListener('resize', toggleHeaderHamburgerOrHome);
     }
 });
 
-function buildNavMenu() {
-    const folders = ['_lightweight'];
-    const navMenu = document.getElementById('nav-menu');
-    if (!navMenu) return;
-    navMenu.innerHTML = '<li><a href="index.html" class="nav-link">Home</a></li>';
-    folders.forEach(folder => {
-        const folderName = folder.replace(/^_/, '');
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="section.html?section=${encodeURIComponent(folder)}" class="nav-link">${folderName.charAt(0).toUpperCase() + folderName.slice(1)}</a>`;
-        navMenu.appendChild(li);
-    });
-}
 
 function setupSidebarToggle() {
     const sidebar = document.getElementById('sidebar');
@@ -41,16 +25,5 @@ function setupSidebarToggle() {
     });
 }
 
-function toggleHeaderHamburgerOrHome() {
-    const hamburger = document.getElementById('header-hamburger');
-    const homeBtn = document.getElementById('home-btn-mobile');
-    if (!hamburger || !homeBtn) return;
-    if (window.innerWidth <= 900) {
-        hamburger.style.display = 'none';
-        homeBtn.style.display = 'flex';
-    } else {
-        hamburger.style.display = '';
-        homeBtn.style.display = 'none';
-    }
-}
+
 
