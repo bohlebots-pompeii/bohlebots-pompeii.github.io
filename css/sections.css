@@ -14,20 +14,25 @@
     background: rgba(0, 0, 0, 0.45);
     pointer-events: none;
 }
-.hero-content   { text-align: center; max-width: 800px; padding: 0 20px; position: relative; z-index: 2; }
+.hero-content   {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+}
 .hero-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 70px;
 }
-
 .hero-logo .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .hero-phoenix {
     width: 160px; height: 160px;
     animation: phoenixFloat 3.5s ease-in-out infinite;

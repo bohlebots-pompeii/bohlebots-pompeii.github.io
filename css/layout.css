@@ -29,7 +29,7 @@
     padding: 0 24px;
 }
 
-.nav-brand { justify-self: start; display: flex; align-items: center; gap: 10px; }
+.nav-brand { justify-self: start; display: flex; align-items: center; gap: 10px; margin-left: 80px}
 
 .nav-menu  { justify-self: center; }
 .hamburger { justify-self: end; }
@@ -302,4 +302,24 @@ section { padding: 80px 20px; }
     .container { max-width: var(--max-w); padding-left: 80px; padding-right: 80px; }
     .markdown-sidebar { width: var(--sidebar-w); }
     #markdown-content.dynamic-section { max-width: 1400px; padding: 72px; }
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    justify-self: end;
+}
+.gymhaan-logo-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gymhaan-logo {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    margin-right: 170px;
 }

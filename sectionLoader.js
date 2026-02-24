@@ -3,7 +3,7 @@ const SECTION_CONFIG = {
         Introduction: ['Introduction.md'],
         Mechanical: [],
         Electronics: [],
-        Software: ['DoesntExist.md']
+        Software: []
     }
 };
 

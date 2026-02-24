@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="nav-brand">
                     <div class="logo-container" style="display:flex;align-items:flex-start;height:56px;">
-                        <img src="_images/logo.png" alt="BohleBots Logo" class="phoenix-logo" style="width:56px;height:56px;object-fit:contain;margin-top: 0px; margin-left: -5px" />
+                        <img src="_images/logonobg.png" alt="BohleBots Logo" class="phoenix-logo" style="width:56px;height:56px;object-fit:contain;margin-top: 0px; margin-left: -5px" />
                     </div>
                     <span class="brand-text">
                         <span class="brand-main">BOHLEBOTS</span>
@@ -26,10 +26,17 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="section.html?section=_lightweight" class="nav-link">Lightweight</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                <div class="nav-right">
+                    <div class="hamburger" id="navbar-hamburger">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="gymhaan-logo-container">
+                        <a href="https://gymhaan.de/" target="_blank" rel="noopener" aria-label="GymHaan Website">
+                            <img src="_images/gymhaan_logo.png" alt="Gymhaan Logo" class="gymhaan-logo">
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -55,7 +62,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo-container">
-                        <img src="_images/logo.png" alt="BohleBots Logo" class="phoenix-logo" style="width:56px;height:56px;object-fit:contain;" />
+                        <img src="_images/logonobg.png" alt="BohleBots Logo" class="phoenix-logo" style="width:56px;height:56px;object-fit:contain;" />
                     </div>
                     <span class="brand-text">
                         <span class="brand-main">BOHLEBOTS</span>
@@ -88,6 +95,22 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="sectionLoader.js"></script>
     <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const brand = document.querySelector('.nav-brand');
+            if (brand) {
+                brand.style.cursor = 'pointer';
+                brand.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
