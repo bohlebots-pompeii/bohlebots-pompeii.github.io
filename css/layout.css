@@ -372,3 +372,21 @@ section { padding: 80px 20px; }
     .markdown-sidebar { width: var(--sidebar-w); }
     #markdown-content.dynamic-section { max-width: 1400px; padding: 72px; }
 }
+
+/* ===== MOBILE OVERLAY MENU ===== */
+.mobile-overlay {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92);
+    z-index: 30000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+}
+.mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
