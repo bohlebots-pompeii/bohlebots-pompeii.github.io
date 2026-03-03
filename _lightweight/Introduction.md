@@ -4,3 +4,4 @@ This is a comprehensive documentation of our robot we built for the lightweight 
 
 #### Written by
 - Julius Gerhardus
+# !! ARTICELS WORK IN PROGRESS !!

@@ -3,46 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BohleBots Pompeii | Rising from the Ashes, Reaching for the Stars</title>
-    <meta name="description" content="BohleBots Pompeii is a competitive robotics team from Gymnasium Haan, Germany. We build autonomous robots for RoboCup competitions – rising from the ashes, reaching for the stars.">
-    <meta name="keywords" content="BohleBots, Pompeii, Robotics, RoboCup, Gymnasium Haan, autonomous robot, lightweight robot, robot soccer">
-    <meta name="author" content="BohleBots Pompeii">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://bohlebots-pompeii.github.io/">
+    <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════════════ -->
+    <!-- Title: ≤60 chars, brand + key phrase front-loaded                  -->
+    <title>BohleBots Pompeii</title>
 
-    <!-- Open Graph / Social Media -->
+    <!-- Description: ≤155 chars – shown as the snippet text in Google      -->
+    <meta name="description" content="BohleBots Pompeii builds award-winning autonomous robots for RoboCup. Student team from Gymnasium Haan, Germany. See our robots, code & journey on GitHub.">
+
+    <meta name="keywords" content="BohleBots, Pompeii, Robotics, RoboCup, Gymnasium Haan, autonomous robot, lightweight robot, robot soccer, student robotics Germany">
+    <meta name="author" content="BohleBots Pompeii">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://bohlebots-pompeii.github.io/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="128x128">
+
+    <!-- ═══ OPEN GRAPH (Facebook / LinkedIn / WhatsApp preview) ══════════ -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bohlebots-pompeii.github.io/">
-    <meta property="og:title" content="BohleBots Pompeii | Rising from the Ashes">
-    <meta property="og:description" content="BohleBots Pompeii is a competitive robotics team from Gymnasium Haan, Germany. Building autonomous robots for RoboCup competitions.">
+    <meta property="og:title" content="BohleBots Pompeii – RoboCup Robotics Team">
+    <meta property="og:description" content="Student robotics team from Gymnasium Haan, Germany. We build autonomous robots that compete in RoboCup – see our robots, code & story.">
     <meta property="og:image" content="https://bohlebots-pompeii.github.io/_images/banner.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="BohleBots Pompeii robot competing at RoboCup">
     <meta property="og:site_name" content="BohleBots Pompeii">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter Card -->
+    <!-- ═══ TWITTER CARD ═════════════════════════════════════════════════ -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BohleBots Pompeii | Rising from the Ashes">
-    <meta name="twitter:description" content="BohleBots Pompeii is a competitive robotics team from Gymnasium Haan, Germany.">
+    <meta name="twitter:title" content="BohleBots Pompeii – RoboCup Robotics Team">
+    <meta name="twitter:description" content="Student robotics team from Gymnasium Haan, Germany. Autonomous robots, RoboCup competitions & open-source code on GitHub.">
     <meta name="twitter:image" content="https://bohlebots-pompeii.github.io/_images/banner.jpeg">
+    <meta name="twitter:image:alt" content="BohleBots Pompeii robot competing at RoboCup">
 
-    <!-- JSON-LD Structured Data -->
+    <!-- ═══ JSON-LD STRUCTURED DATA ══════════════════════════════════════ -->
+    <!-- 1. WebSite – enables Google Sitelinks & search box                 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "WebSite",
       "name": "BohleBots Pompeii",
       "url": "https://bohlebots-pompeii.github.io/",
-      "logo": "https://bohlebots-pompeii.github.io/_images/logonobg.png",
-      "description": "Competitive robotics team from Gymnasium Haan, Germany, participating in RoboCup competitions.",
+      "description": "BohleBots Pompeii builds award-winning autonomous robots for RoboCup competitions. Student team from Gymnasium Haan, Germany.",
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://bohlebots-pompeii.github.io/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "SportsTeam"],
+      "name": "BohleBots Pompeii",
+      "alternateName": "BohleBots",
+      "url": "https://bohlebots-pompeii.github.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bohlebots-pompeii.github.io/_images/logonobg.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://bohlebots-pompeii.github.io/_images/banner.jpeg",
+      "description": "BohleBots Pompeii is a student robotics team from Gymnasium Haan, Germany. We design and build autonomous robots that compete in RoboCup — rising from the ashes, reaching for the stars.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Haan, Germany"
+      },
       "sameAs": [
         "https://github.com/bohlebots-pompeii",
         "https://instagram.com/bohlebots"
       ],
       "memberOf": {
-        "@type": "Organization",
+        "@type": "EducationalOrganization",
         "name": "Gymnasium Haan",
         "url": "https://gymhaan.de/"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "team",
+        "url": "https://bohlebots-pompeii.github.io/"
       }
+    }
+    </script>
+
+    <!-- 3. BreadcrumbList – helps Google show path sitelinks under result  -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bohlebots-pompeii.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lightweight Robot",
+          "item": "https://bohlebots-pompeii.github.io/section.html?section=_lightweight"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "GitHub Organisation",
+          "item": "https://github.com/bohlebots-pompeii"
+        }
+      ]
     }
     </script>
 
@@ -95,7 +169,11 @@
             <h1 class="hero-title">
                 <span class="title-line title-highlight">BOHLEBOTS POMPEII</span>
             </h1>
-            <p class="hero-subtitle">Rising from the ashes, reaching for the stars</p>
+            <p class="hero-desc">Student robotics team from Gymnasium Haan, Germany — building autonomous robots that compete in the RoboCup Junior.</p>
+            <div class="hero-buttons">
+                <a href="section.html?section=_lightweight" class="btn btn-primary">Current Bot</a>
+                <a href="https://github.com/bohlebots-pompeii" class="btn btn-secondary" target="_blank" rel="noopener">GitHub Organisation</a>
+            </div>
         </div>
     </section>
 
@@ -112,7 +190,10 @@
                     </span>
                 </div>
                 <div class="footer-links">
-                    <a href="#home">Home</a>
+                    <a href="index.html">Home</a>
+                    <a href="section.html?section=_lightweight">Lightweight Robot</a>
+                    <a href="https://github.com/bohlebots-pompeii" target="_blank" rel="noopener">GitHub Organisation</a>
+                    <a href="https://gymhaan.de/" target="_blank" rel="noopener">Gymnasium Haan</a>
                 </div>
                 <div class="footer-social">
                     <a href="https://github.com/bohlebots-pompeii" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
