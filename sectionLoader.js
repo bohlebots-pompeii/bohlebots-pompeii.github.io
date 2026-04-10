@@ -3,7 +3,7 @@ const SECTION_CONFIG = {
         Introduction: ['Introduction.md'],
         Mechanical: [],
         Electronics: [],
-        Software: []
+        Software: ['Camera-System.md', 'Strategy.md']
     }
 };
 
@@ -11,6 +11,7 @@ const SECTION_CONFIG = {
 function getParam(key, fallback) {
     return new URLSearchParams(window.location.search).get(key) || fallback;
 }
+
 function getCurrentFolder() {
     let md = getParam('md', '_lightweight/Introduction.md');
     let folder = md.split('/')[0];
@@ -20,6 +21,7 @@ function getCurrentFolder() {
     }
     return folder;
 }
+
 function getCurrentFile() {
     let md = getParam('md', '_lightweight/Introduction.md');
     let file = md.split('/')[1];
@@ -108,7 +110,7 @@ function renderMarkdown(folder, file, triedFallback = false) {
         .then(md => {
             console.log('Loaded markdown for', file, 'length:', md.length);
             document.getElementById('markdown-content').innerHTML =
-                `<div class="section-content">${marked.parse(stripFrontMatter(md))}</div>`;
+                `<div class="section-content">${marked.parse(md)}</div>`; // convert the Markdown to html with marked
         })
         .catch((err) => {
             console.warn('Markdown load failed for', file, err);
